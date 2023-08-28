@@ -1,13 +1,12 @@
 import * as api from "../../api";
+import { openAlertMessage } from "./alertActions";
 // import { useNavigate } from "react-router-dom";
 
-
 export const authActions = {
-    SET_USER_DETAILS: "AUTH.SET_USER_DETAILS",
+  SET_USER_DETAILS: "AUTH.SET_USER_DETAILS",
 };
 
 export const getActions = (dispatch) => {
-    
   return {
     login: (userDetails, navigate) => dispatch(login(userDetails, navigate)),
     register: (userDetails, navigate) =>
@@ -15,13 +14,12 @@ export const getActions = (dispatch) => {
   };
 };
 
-
 const setUserDetails = (userDetails) => {
-    return{
-        type: authActions.SET_USER_DETAILS,
-        userDetails,
-    }
-}
+  return {
+    type: authActions.SET_USER_DETAILS,
+    userDetails,
+  };
+};
 
 const login = (userDetails, navigate) => {
   return async (dispatch) => {
@@ -30,6 +28,8 @@ const login = (userDetails, navigate) => {
 
     if (response.error) {
       // show error message
+
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
@@ -47,6 +47,8 @@ const register = (userDetails, navigate) => {
 
     if (response.error) {
       // show error message
+
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
