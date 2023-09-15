@@ -1,0 +1,19 @@
+{
+  "name": "discord-app",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000D\u0000i\u0000s\u0000c\u0000o\u0000r\u0000d\u0000\r\u0000 \u0000#\u0000 \u0000D\u0000i\u0000s\u0000c\u0000o\u0000r\u0000d\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgamMalik/Discord.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgamMalik/Discord/issues"
+  },
+  "homepage": "https://github.com/AgamMalik/Discord#readme"
+}
